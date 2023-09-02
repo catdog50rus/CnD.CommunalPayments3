@@ -35,6 +35,8 @@ public class UpdateInvoiceHandler : IRequestHandler<UpdateInvoiceCommand, Invoic
 
         repository.Update(entity);
 
+        await _unitOfWork.SaveChangesAsync();
+
         return await repository.GetFirstOrDefaultAsync(predicate: x => x.Id == request.Invoice.Id.Value);
     }
 }
