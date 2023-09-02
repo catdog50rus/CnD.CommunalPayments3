@@ -14,15 +14,10 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.10" />
     
     </ItemGroup>
+
+
     <ItemGroup>
-        <ProjectReference Include="..\CnD.CommunalPayments3.Back.Domen\CnD.CommunalPayments3.Back.Doman.csproj" />
-
+      <ProjectReference Include="..\CnD.CommunalPayments3.Back.Doman\CnD.CommunalPayments3.Back.Doman.csproj" />
     </ItemGroup>
-
-
-
-
-
-
 
 </Project>
