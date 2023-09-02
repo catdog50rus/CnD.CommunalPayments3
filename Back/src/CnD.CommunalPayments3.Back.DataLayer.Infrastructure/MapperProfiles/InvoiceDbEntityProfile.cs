@@ -1,8 +1,8 @@
 using AutoMapper;
 using CnD.CommunalPayments3.Back.DataLayer.Infrastructure.Entities;
-using CnD.CommunalPayments3.Domen.Helpers;
-using CnD.CommunalPayments3.Domen.Models;
-using CnD.CommunalPayments3.Domen.Models.Base.BaseModels;
+using CnD.CommunalPayments3.Doman.Helpers;
+using CnD.CommunalPayments3.Doman.Models;
+using CnD.CommunalPayments3.Doman.Models.Base.BaseModels;
 
 namespace CnD.CommunalPayments3.Back.DataLayer.Infrastructure.MapperProfiles;
 

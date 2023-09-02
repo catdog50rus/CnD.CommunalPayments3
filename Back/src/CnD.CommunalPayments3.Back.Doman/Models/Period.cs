@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using CnD.CommunalPayments3.Domen.Models.Base;
+using CnD.CommunalPayments3.Doman.Models.Base;
 
-namespace CnD.CommunalPayments3.Domen.Models;
+namespace CnD.CommunalPayments3.Doman.Models;
 
-public class Period : DomenModelBase
+public class Period : DomanModelBase
 {
     /// <summary>
     /// Год

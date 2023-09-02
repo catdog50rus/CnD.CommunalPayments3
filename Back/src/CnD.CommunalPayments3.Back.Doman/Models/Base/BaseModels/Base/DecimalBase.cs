@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace CnD.CommunalPayments3.Domen.Models.Base.BaseModels.Base;
+namespace CnD.CommunalPayments3.Doman.Models.Base.BaseModels.Base;
 
 public class DecimalBase : IProperty<decimal>
 {

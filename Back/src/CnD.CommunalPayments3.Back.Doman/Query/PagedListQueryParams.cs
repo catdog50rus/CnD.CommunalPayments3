@@ -1,4 +1,4 @@
-﻿namespace CnD.CommunalPayments3.Domen.Query;
+﻿namespace CnD.CommunalPayments3.Doman.Query;
 
 public class PagedListQueryParams : QueryParamsBase, IPagedListQueryParams
 {

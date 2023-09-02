@@ -15,7 +15,7 @@
     
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\CnD.CommunalPayments3.Back.Domen\CnD.CommunalPayments3.Back.Domen.csproj" />
+        <ProjectReference Include="..\CnD.CommunalPayments3.Back.Domen\CnD.CommunalPayments3.Back.Doman.csproj" />
 
     </ItemGroup>
 

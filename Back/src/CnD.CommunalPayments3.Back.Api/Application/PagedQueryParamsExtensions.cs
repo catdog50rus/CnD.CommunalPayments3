@@ -1,4 +1,4 @@
-using CnD.CommunalPayments3.Domen.Query;
+using CnD.CommunalPayments3.Doman.Query;
 
 namespace CnD.CommunalPayments3.Back.Api.Application;
 

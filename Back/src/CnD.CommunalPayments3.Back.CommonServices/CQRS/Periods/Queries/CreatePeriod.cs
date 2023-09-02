@@ -1,8 +1,8 @@
 using AutoMapper;
 using Calabonga.UnitOfWork;
 using CnD.CommunalPayments3.Back.DataLayer.Infrastructure.Entities;
-using CnD.CommunalPayments3.Domen.Models;
-using CnD.CommunalPayments3.Domen.Models.Base.BaseModels;
+using CnD.CommunalPayments3.Doman.Models;
+using CnD.CommunalPayments3.Doman.Models.Base.BaseModels;
 using MediatR;
 
 namespace CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Periods.Queries;

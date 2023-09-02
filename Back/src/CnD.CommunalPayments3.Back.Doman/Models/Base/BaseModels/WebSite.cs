@@ -1,6 +1,6 @@
-using CnD.CommunalPayments3.Domen.Models.Base.BaseModels.Base;
+using CnD.CommunalPayments3.Doman.Models.Base.BaseModels.Base;
 
-namespace CnD.CommunalPayments3.Domen.Models.Base.BaseModels;
+namespace CnD.CommunalPayments3.Doman.Models.Base.BaseModels;
 
 public class WebSite : IProperty<string>
 {
