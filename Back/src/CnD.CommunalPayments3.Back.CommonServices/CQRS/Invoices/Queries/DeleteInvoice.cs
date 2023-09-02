@@ -1,11 +1,11 @@
 using Calabonga.UnitOfWork;
 using CnD.CommunalPayments3.Back.DataLayer.Infrastructure.Entities;
-using CnD.CommunalPayments3.Domen.Models;
+using CnD.CommunalPayments3.Doman.Models;
 using MediatR;
 
 namespace CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
 
-public record DeleteInvoiceCommand(int id) : INotification;
+public record DeleteInvoiceCommand(int Id) : INotification;
 
 public class DeleteInvoiceHandler : INotificationHandler<DeleteInvoiceCommand>
 {
@@ -16,11 +16,11 @@ public class DeleteInvoiceHandler : INotificationHandler<DeleteInvoiceCommand>
         _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
     }
     
-    public Task Handle(DeleteInvoiceCommand request, CancellationToken cancellationToken = default)
+    public async Task Handle(DeleteInvoiceCommand request, CancellationToken cancellationToken = default)
     {
         var repository = _unitOfWork.GetRepository<InvoiceEntity>();
-        repository.Delete(request.id);
+        repository.Delete(request.Id);
 
-        return Task.CompletedTask;
+        await _unitOfWork.SaveChangesAsync();
     }
 }

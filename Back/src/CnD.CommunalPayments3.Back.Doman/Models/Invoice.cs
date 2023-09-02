@@ -1,9 +1,9 @@
-using CnD.CommunalPayments3.Domen.Models.Base;
-using CnD.CommunalPayments3.Domen.Models.Base.BaseModels;
+using CnD.CommunalPayments3.Doman.Models.Base;
+using CnD.CommunalPayments3.Doman.Models.Base.BaseModels;
 
-namespace CnD.CommunalPayments3.Domen.Models;
+namespace CnD.CommunalPayments3.Doman.Models;
 
-public class Invoice : DomenModelBase
+public class Invoice : DomanModelBase
 {
     /// <summary>
     /// Период за который выставлен счет

@@ -1,12 +1,12 @@
-using CnD.CommunalPayments3.Domen.Models.Base;
-using CnD.CommunalPayments3.Domen.Models.Base.BaseModels;
+using CnD.CommunalPayments3.Doman.Models.Base;
+using CnD.CommunalPayments3.Doman.Models.Base.BaseModels;
 
-namespace CnD.CommunalPayments3.Domen.Models;
+namespace CnD.CommunalPayments3.Doman.Models;
 
 /// <summary>
 /// Поставщик услуги
 /// </summary>
-public class Provider : DomenModelBase
+public class Provider : DomanModelBase
 {
     /// <summary>
     /// Наименование поставщика услуги ЖКХ

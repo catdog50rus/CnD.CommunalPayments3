@@ -1,7 +1,7 @@
 using AutoMapper;
 using Calabonga.UnitOfWork;
 using CnD.CommunalPayments3.Back.DataLayer.Infrastructure.Entities;
-using CnD.CommunalPayments3.Domen.Models;
+using CnD.CommunalPayments3.Doman.Models;
 using MediatR;
 
 namespace CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
@@ -34,6 +34,8 @@ public class UpdateInvoiceHandler : IRequestHandler<UpdateInvoiceCommand, Invoic
         var repository = _unitOfWork.GetRepository<InvoiceEntity>();
 
         repository.Update(entity);
+
+        await _unitOfWork.SaveChangesAsync();
 
         return await repository.GetFirstOrDefaultAsync(predicate: x => x.Id == request.Invoice.Id.Value);
     }

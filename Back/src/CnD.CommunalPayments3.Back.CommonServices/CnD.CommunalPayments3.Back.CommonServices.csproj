@@ -16,11 +16,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CnD.CommunalPayments3.Back.DataLayer.Infrastructure\CnD.CommunalPayments3.Back.DataLayer.Infrastructure.csproj" />
-      <ProjectReference Include="..\CnD.CommunalPayments3.Back.Domen\CnD.CommunalPayments3.Back.Domen.csproj" />
     </ItemGroup>
-
-
-
-
 
 </Project>

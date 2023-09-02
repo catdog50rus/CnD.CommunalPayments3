@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CnD.CommunalPayments3.Domen.Helpers;
+namespace CnD.CommunalPayments3.Doman.Helpers;
 
 public static class EnumHelper
 {

@@ -5,7 +5,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Base.Response;
 using CnD.CommunalPayments3.Back.Api.Models.Invoices.Requests;
 using CnD.CommunalPayments3.Back.Api.Models.Invoices.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
-using CnD.CommunalPayments3.Domen.Models;
+using CnD.CommunalPayments3.Doman.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
