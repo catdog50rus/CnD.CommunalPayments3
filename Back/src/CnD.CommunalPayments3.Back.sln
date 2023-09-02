@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CnD.CommunalPayments3.Back.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CnD.CommunalPayments3.Back.DataLayer.DI", "CnD.CommunalPayments3.Back.DataLayer.DI\CnD.CommunalPayments3.Back.DataLayer.DI.csproj", "{4ED3E23F-377D-4B97-A0A3-57F1158A9F19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServicesTests", "ServicesTests", "{5DC97528-AC43-4B05-B099-72C25BE67AA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CnD.CommunalPayments3.Back.CommonServices.Tests", "..\Tests\ServicesTests\CnD.CommunalPayments3.Back.CommonServices.Tests\CnD.CommunalPayments3.Back.CommonServices.Tests.csproj", "{BD7EF2BD-6750-4780-9DF5-C228A34EDB69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{4ED3E23F-377D-4B97-A0A3-57F1158A9F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ED3E23F-377D-4B97-A0A3-57F1158A9F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ED3E23F-377D-4B97-A0A3-57F1158A9F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7EF2BD-6750-4780-9DF5-C228A34EDB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7EF2BD-6750-4780-9DF5-C228A34EDB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7EF2BD-6750-4780-9DF5-C228A34EDB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7EF2BD-6750-4780-9DF5-C228A34EDB69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +80,10 @@ Global
 		{06295A31-6F9A-4287-A4A9-BFA8DA0AED4C} = {86A9215E-42F6-4814-AB5C-2A9B161C3C51}
 		{F1CCC66A-ED3F-4315-B496-016367CDE88D} = {06295A31-6F9A-4287-A4A9-BFA8DA0AED4C}
 		{4ED3E23F-377D-4B97-A0A3-57F1158A9F19} = {C2EDB3DC-6678-44E8-9747-372EA4EF747A}
+		{5DC97528-AC43-4B05-B099-72C25BE67AA4} = {B63B4C62-2C76-4E68-929B-335A13932E00}
+		{BD7EF2BD-6750-4780-9DF5-C228A34EDB69} = {5DC97528-AC43-4B05-B099-72C25BE67AA4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D74B324-CFFB-4EB3-AC53-D261B9378357}
 	EndGlobalSection
 EndGlobal
