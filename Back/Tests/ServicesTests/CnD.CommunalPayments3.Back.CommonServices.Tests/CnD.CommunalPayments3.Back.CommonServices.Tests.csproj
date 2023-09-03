@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.18.0" />
     <PackageReference Include="AutoFixture.Xunit2" Version="4.18.0" />
+    <PackageReference Include="Calabonga.UnitOfWork" Version="3.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="Moq" Version="4.18.4" />
     <PackageReference Include="Moq.EntityFrameworkCore" Version="7.0.0.2" />
@@ -26,5 +27,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\CnD.CommunalPayments3.Back.Api.Models\CnD.CommunalPayments3.Back.Api.Models.csproj" />
+    <ProjectReference Include="..\..\..\src\CnD.CommunalPayments3.Back.CommonServices\CnD.CommunalPayments3.Back.CommonServices.csproj" />
+    <ProjectReference Include="..\..\..\src\CnD.CommunalPayments3.Back.DataLayer.Infrastructure\CnD.CommunalPayments3.Back.DataLayer.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>

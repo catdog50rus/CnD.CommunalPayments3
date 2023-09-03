@@ -20,7 +20,7 @@ public class CreateInvoiceHandler : IRequestHandler<CreateInvoiceCommand, Invoic
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
     
-    public async Task<Invoice> Handle(CreateInvoiceCommand request, CancellationToken cancellationToken)
+    public async Task<Invoice> Handle(CreateInvoiceCommand request, CancellationToken cancellationToken = default)
     {
         var invoice = request.Invoice;
         

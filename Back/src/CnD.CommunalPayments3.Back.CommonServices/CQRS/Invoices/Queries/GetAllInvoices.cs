@@ -28,17 +28,16 @@ public class GetAllInvoicesHandler : IRequestHandler<GetAllInvoicesCommand, IRea
         return _mapper.Map<IReadOnlyList<Invoice>>(entities);
     }
 
-    private async Task<IReadOnlyList<InvoiceEntity>> GetAllAsync(GetAllInvoicesCommand request,
-        CancellationToken cancellationToken = default)
+    private async Task<IReadOnlyList<InvoiceEntity>> GetAllAsync(GetAllInvoicesCommand request, CancellationToken cancellationToken = default)
     {
         var repository = _unitOfWork.GetRepository<InvoiceEntity>();
 
         var entities = await repository
             .GetPagedListAsync
             (
-                include: x=>x
-                    .Include(p=>p.Provider)
-                    .Include(p=>p.Period),
+                include: x => x
+                    .Include(p => p.Provider)
+                    .Include(p => p.Period),
                 orderBy: x => x.OrderBy(entity => entity.Id),
                 pageIndex: request.QueryParams.PageIndex,
                 pageSize: request.QueryParams.PageSize,
