@@ -9,10 +9,8 @@ public class BaseTests : BaseCQRSTests<InvoiceEntity>
 {
     protected readonly INotificationHandler<DeleteInvoiceCommand> _testHandler;
 
-    public BaseTests()
+    protected BaseTests()
     {
         _testHandler = new DeleteInvoiceHandler(_unitOfWorkMock.Object);
     }
-
-
 }

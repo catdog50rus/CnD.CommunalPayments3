@@ -21,12 +21,12 @@ public static class EnumHelper
         {
             if (Attribute.GetCustomAttribute(item, typeof(DisplayAttribute)) is DisplayAttribute attribute)
             {
-                if (attribute.Name!.ToLower() == name.ToLower())
+                if (string.Equals(attribute.Name!, name, StringComparison.InvariantCultureIgnoreCase))
                     return (T)item.GetValue(null);
             }
             else
             {
-                if (item.Name.ToLower() == name.ToLower())
+                if (string.Equals(item.Name, name, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return (T)item.GetValue(null);
                 }

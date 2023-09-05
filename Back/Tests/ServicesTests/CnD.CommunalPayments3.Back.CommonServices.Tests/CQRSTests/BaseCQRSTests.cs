@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using AutoFixture;
+using AutoMapper;
 using Calabonga.UnitOfWork;
 using CnD.CommunalPayments3.Back.DataLayer.Infrastructure.Entities.Base;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -10,13 +11,18 @@ public class BaseCQRSTests<TEntity> where TEntity : EntityBase
 {
     protected readonly Mock<IUnitOfWork> _unitOfWorkMock = new();
     protected IMapper _mapper;
+    
+    private CancellationTokenSource _cts = new();
+    protected CancellationToken Token => _cts.Token;
 
     protected Mock<IRepository<TEntity>> _repositoryMock = new();
     protected Mock<IDbContextTransaction> _transactionMock = new();
 
+    protected readonly Fixture _fixture = new();
+
     public BaseCQRSTests()
     {
-        _mapper = BaseCQRSTests<TEntity>.SetMapper();
+        _mapper = SetMapper();
 
         GetRepository();
     }
@@ -30,6 +36,8 @@ public class BaseCQRSTests<TEntity> where TEntity : EntityBase
 
         return mappingConfig.CreateMapper();
     }
+
+    protected T GetFixtureObject<T>() => _fixture.Create<T>();
 
     protected void GetRepository()
     {

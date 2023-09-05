@@ -11,12 +11,10 @@ public class CreateInvoiceHandlerTests : BaseTests
     public async Task Scenario_01_ShouldReturnResult(CreateInvoiceCommand request)
     {
         //arrange
-        var cts = new CancellationTokenSource();
-
         BeginTransactionAsync();
 
         //act
-        var result = await _testHandler.Handle(request, cts.Token);
+        var result = await _testHandler.Handle(request, Token);
 
         //assert
         result.ShouldNotBeNull();

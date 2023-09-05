@@ -11,12 +11,10 @@ public class DeleteInvoiceHandlerTests : BaseTests
     public async Task Scenario_01_ShouldReturnResult(DeleteInvoiceCommand request)
     {
         //arrange
-        var cts = new CancellationTokenSource();
-
         BeginTransactionAsync();
 
         //act
-        await _testHandler.Handle(request, cts.Token);
+        await _testHandler.Handle(request, Token);
 
         //assert
         _unitOfWorkMock.Verify(x => x.SaveChangesAsync(), Times.Once);
