@@ -6,6 +6,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Base.Response;
 using CnD.CommunalPayments3.Back.Api.Models.Providers.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Providers.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.ProviderEndpoints;
@@ -21,7 +22,7 @@ public class GetAllEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult<List<GetAllProvidersResponse>>), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    [Authorize(Policy = "ApiKeyPolicy")]
     [FeatureGroupName("Providers")]
     private async Task<IResult> GetAll(IMediator mediator, IMapper mapper, HttpContext context, CancellationToken cancellationToken = default)
     {

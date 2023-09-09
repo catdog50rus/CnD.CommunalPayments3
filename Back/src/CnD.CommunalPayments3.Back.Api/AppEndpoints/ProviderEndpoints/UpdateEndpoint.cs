@@ -7,6 +7,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Providers.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Providers.Queries;
 using CnD.CommunalPayments3.Doman.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.ProviderEndpoints;
@@ -22,7 +23,7 @@ public class UpdateEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult<UpdateProviderResponse>), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult<UpdateProviderResponse>), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    [Authorize(Policy = "ApiKeyPolicy")]
     [FeatureGroupName("Providers")]
     private async Task<IResult> Update(IMediator mediator, IMapper mapper, UpdateProviderRequest updateProvider, CancellationToken cancellationToken = default)
     {

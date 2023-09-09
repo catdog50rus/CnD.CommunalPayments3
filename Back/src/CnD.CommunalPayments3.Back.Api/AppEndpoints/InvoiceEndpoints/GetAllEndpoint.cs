@@ -6,6 +6,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Base.Response;
 using CnD.CommunalPayments3.Back.Api.Models.Invoices.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.InvoiceEndpoints;
@@ -23,8 +24,8 @@ public class GetAllEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult<List<GetAllInvoiceResponse>>), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
     [FeatureGroupName("Invoices")]
+    [Authorize(Policy = "ApiKeyPolicy")]
     private async Task<IResult> GetAll(IMediator mediator, IMapper mapper, HttpContext context)
     {
         try

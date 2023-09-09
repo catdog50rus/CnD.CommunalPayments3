@@ -7,6 +7,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Invoices.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
 using CnD.CommunalPayments3.Doman.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.InvoiceEndpoints;
@@ -22,7 +23,7 @@ public class CreateNewEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult<CreateInvoiceResponse>), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    [Authorize(Policy = "ApiKeyPolicy")]
     [FeatureGroupName("Invoices")]
     private async Task<IResult> CreateNew(IMediator mediator, IMapper mapper, CreateInvoiceRequest newInvoice, CancellationToken cancellationToken = default )
     {
