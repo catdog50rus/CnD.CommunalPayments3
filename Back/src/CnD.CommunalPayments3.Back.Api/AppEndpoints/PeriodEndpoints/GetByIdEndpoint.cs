@@ -5,6 +5,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Base.Response;
 using CnD.CommunalPayments3.Back.Api.Models.Periods.Responses;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Periods.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.PeriodEndpoints;
@@ -20,7 +21,7 @@ public class GetByIdEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult<GetPeriodResponse>), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    [Authorize(Policy = "ApiKeyPolicy")]
     [FeatureGroupName("Periods")]
     private async Task<IResult> GetById(IMediator mediator, IMapper mapper, int id, CancellationToken cancellationToken = default)
     {

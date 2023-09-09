@@ -4,11 +4,13 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>274c2d1c-80f4-4641-92f5-35159cb33b32</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Calabonga.AspNetCore.AppDefinitions" Version="2.2.0" />
         <PackageReference Include="MediatR" Version="12.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
         <PackageReference Include="Automapper" Version="12.0.0" />

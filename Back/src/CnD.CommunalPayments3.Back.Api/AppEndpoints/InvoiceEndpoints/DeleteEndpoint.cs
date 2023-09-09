@@ -3,6 +3,7 @@ using CnD.CommunalPayments3.Back.Api.Models.Base;
 using CnD.CommunalPayments3.Back.Api.Models.Base.Response;
 using CnD.CommunalPayments3.Back.Services.CommonServices.CQRS.Invoices.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CnD.CommunalPayments3.Back.Api.AppEndpoints.InvoiceEndpoints;
@@ -18,7 +19,7 @@ public class DeleteEndpoint : AppDefinition
     [ProducesResponseType(typeof(ResponseResult), 200)]
     [ProducesResponseType(401)]
     [ProducesResponseType(typeof(ResponseResult), 500)]
-    // [Authorize(AuthenticationSchemes = AuthData.AuthSchemes)]
+    [Authorize(Policy = "ApiKeyPolicy")]
     [FeatureGroupName("Invoices")]
     private async Task<IResult> Delete(IMediator mediator, int id, CancellationToken cancellationToken = default)
     {
